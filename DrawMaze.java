@@ -20,7 +20,7 @@ public class DrawMaze{
     System.out.println(maze);
     //Slows it down so you can track
    try{
-      TimeUnit.MILLISECONDS.sleep(65);
+      TimeUnit.MILLISECONDS.sleep(80);
     }catch (InterruptedException e) {
       System.exit(1);
     }
