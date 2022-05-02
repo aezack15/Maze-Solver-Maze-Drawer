@@ -25,8 +25,6 @@ public class LinkedList<T> implements List<T>,Queue<T>,Stack<T>{
     size=0;
   }
 
-
-
   // Public facing list interface methods
   //
   // Each method calls a private method that is implemented
@@ -67,12 +65,6 @@ public class LinkedList<T> implements List<T>,Queue<T>,Stack<T>{
     return "["+toString(head)+" ]";
   }
 
-  /*************************************************************
-   * Private recursive methods
-   *
-   * You get these for free --- good examples for later, maybe?
-   **************************************************************/
-
   private T get(Node n, int i){
     if( i < 0){
       throw new IndexOutOfBoundsException();
@@ -86,7 +78,6 @@ public class LinkedList<T> implements List<T>,Queue<T>,Stack<T>{
     }
 
     return get(n.getNext(),i-1);
-
   }
 
 
@@ -108,8 +99,7 @@ public class LinkedList<T> implements List<T>,Queue<T>,Stack<T>{
 
   }
 
-
-
+	
   private Node add(Node n, int i, T e){
     if( i < 0){
       throw new IndexOutOfBoundsException();
@@ -227,6 +217,5 @@ public class LinkedList<T> implements List<T>,Queue<T>,Stack<T>{
     	return head.getData();
     }
   }
-
 }
 
