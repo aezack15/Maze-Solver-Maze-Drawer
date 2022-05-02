@@ -1,11 +1,7 @@
 import java.util.concurrent.TimeUnit;
 
-/**
- * TODO: Implement the remainder of this main function!
- */
 public class SolveMaze{
 
-  /** Clears the screen - you don't need to worry about this */
   public static void clearScreen() {
     System.out.print("\033[H\033[2J");
     System.out.flush();
@@ -87,25 +83,8 @@ public class SolveMaze{
     	    	System.out.println(path);
     }//end while
 
-    //TODO: Complete the Solve Maze!
-    //
-    // Basic Algorithm:
-    //    init: enqueue the start index on a queue, and mark it as visited
-    //
-    //    Loop: continue unitl queue empty or finished reached
-    //      0. print progress()
-    //      1. dequeue current index
-    //      2. Check if we've solved the maze, if so break!
-    //      3. if any reachable neighbors from the current index
-    //         a. enqueue the the neighbor's index
-    //         b. mark the neighbor as visited
-    //      4. continue loop
-    //
-    // 
-
     //print final result after complete!
     clearScreen();
     System.out.println(maze);
   }
-
 }
