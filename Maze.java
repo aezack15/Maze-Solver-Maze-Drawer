@@ -1,9 +1,5 @@
 import java.io.*;
-//YOU MAY NOT IMPORT java.util.* !!!
 
-/**
- * Super-useful class you should fully understand and not change!
- */
 public class Maze implements Serializable{
 
   /** Field for representing left - This should actually be an enum */
@@ -17,10 +13,6 @@ public class Maze implements Serializable{
 
   private Space[][] map;
   private int width,height;
-
-  /** This class is used heavily within Maze, but understanding it isn't
-   * important for you!
-   */
   private class Space implements Serializable{
 
     //array of walls, and neighbors
@@ -34,8 +26,6 @@ public class Maze implements Serializable{
       ---
       2
      ************/
-
-
 
     //the height and width of this space
     private int height;
@@ -140,7 +130,6 @@ public class Maze implements Serializable{
           n++;
       return n;
     }
-
   }
 
   /**
@@ -511,14 +500,11 @@ public class Maze implements Serializable{
     }
     s+="\n";
     return s;
-
-
   }
 
 
 
   public static void main(String args[]){
-
 
     Maze m = new Maze(10,10);
     System.out.println(m);
@@ -545,7 +531,6 @@ public class Maze implements Serializable{
         m.visit(j,i);
         m.removeWall(j,(j%2 == 0) ? 9 : 0, DOWN);
       }
-
     }
 
     System.out.println(m);
@@ -560,11 +545,9 @@ public class Maze implements Serializable{
           m.removeWall(9-i,j, UP);
         }
       }
-
     }
 
     System.out.println(m);
 
   }
-
 }
