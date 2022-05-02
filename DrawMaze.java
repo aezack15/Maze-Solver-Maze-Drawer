@@ -19,11 +19,11 @@ public class DrawMaze{
     clearScreen();
     System.out.println(maze);
     //Slows it down so you can track
-   /* try{
+   try{
       TimeUnit.MILLISECONDS.sleep(65);
     }catch (InterruptedException e) {
       System.exit(1);
-    } */
+    }
   }
 
   public static void main(String args[]){
