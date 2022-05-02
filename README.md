@@ -2,7 +2,7 @@
 
 Implements Stack and Queue interfaces using Linked Lists to solve and generate mazes. Solves a Maze using Breadth First Search (BFS) by using a Queue interface (implemented with a Linked List). Draws a Maze using Depth First Search (DFS) by using a Stack interface (implemented with a Linked Lsit)
 
-# Installation and Execution
+## Installation and Execution
 Requirements: ```javac``` and ```jar```
 
 ### Draw Maze
