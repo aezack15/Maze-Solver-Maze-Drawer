@@ -3,12 +3,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.ArrayList;
 import java.util.*;
 
-/**
- * TODO: Implement the remainder of this main function!
- */
 public class DrawMaze{
 
-  /** Clears the screen - you don't need to worry about this */
   public static void clearScreen() {
     System.out.print("\033[H\033[2J");
     System.out.flush();
@@ -52,8 +48,6 @@ public class DrawMaze{
       rnd = new Random(0);
     }
 
-
-
     //Create the Maze at the height and width
     Maze maze= new Maze(height,width);
 
@@ -65,9 +59,6 @@ public class DrawMaze{
     maze.removeWall(end,Maze.RIGHT);
     boolean IamDone = false;
 
-    //TODO: Complete the Draw Maze!
-    // 
-    // Basic Algorithm:
     // init: push the start index on a stack, mark it as visited
     LinkedList<Coord> mazeList = new LinkedList<Coord>();
     maze.visit(start); //show that the first coord is visited
