@@ -5,7 +5,7 @@ import java.util.*;
 
 public class DrawMaze{
 
-  public static void clearScreen() {
+  public static void clearScreen(){
     System.out.print("\033[H\033[2J");
     System.out.flush();
   }  
@@ -50,7 +50,7 @@ public class DrawMaze{
 
     //Create the Maze at the height and width
     Maze maze= new Maze(height,width);
-
+	  
     //initialize start, upper left, and finnish bottom right
     Coord start=new Coord(0,0);
     Coord end=new Coord(height-1,width-1);
@@ -64,54 +64,43 @@ public class DrawMaze{
     maze.visit(start); //show that the first coord is visited
     mazeList.push(start); //put start on the front of the list
     
-    while(mazeList.size() != 0)
-    {
+    while(mazeList.size() != 0){
     	//System.out.println("mazeList: " + mazeList.toString());
     	poppedCoord = mazeList.pop(); //pop index off the stack
-    	if((maze.getUnvisitedNeighbors(poppedCoord)) != null) //checks to see if the peeked coordinate has any unvisited neighbors	
-    	{
-    		while((maze.getUnvisitedNeighbors(poppedCoord)).size() == 0)
-    		{
+    	if((maze.getUnvisitedNeighbors(poppedCoord)) != null){ //checks to see if the peeked coordinate has any unvisited neighbors	
+    		while((maze.getUnvisitedNeighbors(poppedCoord)).size() == 0){
     			poppedCoord = mazeList.pop();
-    			if(poppedCoord.row == 0 && poppedCoord.col == 0) //if i've popped all the way to the beginning of the maze, I'm done
-    			{
+    			if(poppedCoord.row == 0 && poppedCoord.col == 0){ //if i've popped all the way to the beginning of the maze, I'm done
     				IamDone = true;
     				break;
     			}
     		}
-    		if(IamDone != true)
-    		{
+    		if(IamDone != true){
 			int r = rnd.nextInt((maze.getUnvisitedNeighbors(poppedCoord)).size());
 			Coord g = maze.getUnvisitedNeighbors(poppedCoord).get(r); //choose the random coord that was confirmed as unvisited
 			
-			if(g.row > poppedCoord.row)
-			{
+			if(g.row > poppedCoord.row){
 				maze.removeWall(poppedCoord, Maze.DOWN);
 			}
-			else if(g.row < poppedCoord.row)
-			{
+			else if(g.row < poppedCoord.row){
 				maze.removeWall(poppedCoord, Maze.UP);
 			}
-			else if(g.col > poppedCoord.col)
-			{
+			else if(g.col > poppedCoord.col){
 				maze.removeWall(poppedCoord, Maze.RIGHT);
 			}
-			else if(g.col < poppedCoord.col)
-			{
+			else if(g.col < poppedCoord.col){
 				maze.removeWall(poppedCoord, Maze.LEFT);
 			}
 			maze.visit(g); //mark it as visited
 			mazeList.push(poppedCoord); //push the current index onto the stack
 			mazeList.push(g); //push the next index on the stack
-			}
-		else
-		{
+		}
+		else{
 			break; //I've hit my end criteria and have drawn the maze
 		}
     	}
     		progress(maze);
-    } //end While
-
+    }//end While
     //Writes maze to output file once done
     clearScreen();
     maze.unvisitAll();
